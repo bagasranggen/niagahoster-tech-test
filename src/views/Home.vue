@@ -11,6 +11,7 @@
     <Module />
     <Hosting />
     <Contact />
+    <Footer />
   </div>
 </template>
 
@@ -27,11 +28,12 @@ import Module from '@/components/Module'
 import Hosting from '@/components/Hosting'
 import Header from '@/components/Header'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default {
   name: 'Home',
   components: {
-    Headline, Navbar, Features, Packages, Limit, Bundling, Support, Module, Hosting, Header, Contact
+    Headline, Navbar, Features, Packages, Limit, Bundling, Support, Module, Hosting, Header, Contact, Footer
   }
 }
 </script>

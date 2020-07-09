@@ -1,10 +1,10 @@
 <template>
     <section class="packages">
         <div class="container">
-            <h2>Paket Singapura</h2>
-            <h3>Diskon</h3>
+            <h2>Paket Hosting Singapura yang Tepat</h2>
+            <h3>Diskon 40% + Domain dan SSL Gratis untuk Anda</h3>
             <div class="row packages__list">
-                <div class="col-md-3" v-for="(pack, index) in splittedPackages" :key="index">
+                <div class="col-sm-6 col-md-3 p-sm-0 mb-3 mb-md-0" v-for="(pack, index) in splittedPackages" :key="index">
                     <div :class="(pack.best) ? 'list__item--best-seller' : 'list__item'">
                         <div v-if="pack.best" class="item__best"><span>Best Seller!</span></div>
                         <h4>{{pack.title}}</h4>
@@ -17,15 +17,15 @@
                             </div>
                         </div>
                         <div class="item__user">
-                            <span>{{pack.user}}</span><span> Pengguna Terdaftar</span>
+                            <span>{{pack.users}}</span><span> Pengguna Terdaftar</span>
                         </div>
                         <div class="item__content">
                             <ul>
                                 <li v-for="(feature, index) in pack.features" :key="index">
-                                    <span v-for="(list, index) in feature" :key="index">{{list}}</span>
+                                    <span v-for="(list, index) in feature" :key="index" v-html="list"></span>
                                 </li>
                             </ul>
-                            <a href="#">Pilih Sekarang</a>
+                            <a href="#">{{(pack.discount) ? 'Diskon 40%' : 'Pilih Sekarang'}}</a>
                         </div>
                     </div>
                 </div>
@@ -39,72 +39,85 @@ export default {
     name: 'Packages',
     data() {
         return {
-            testing: [],
             packages: [
                 {   
                     best: false,
+                    discount: false,
                     title: 'Bayi',
                     normal_price: '19.000',
                     special_price: '14.900',
                     users: '938',
                     features: [
                         ['0.5X RESOURCES POWER'],
-                        ['500 MB', ' ','DISK SPACE'],
+                        ['500 MB', ' Disk Space'],
+                        ['Unlimited', ' Bandwidth'],
+                        ['Unlimited', ' Databases'],
+                        ['1', ' Domain'],
+                        ['Instant', ' Backup'],
+                        ['Unlimited SSL', ' Gratis Selamanya'],
                     ]
                 },
                 {   
                     best: false,
-                    title: 'Bayi',
-                    normal_price: '19.000',
-                    special_price: '14.900',
-                    users: '938',
+                    discount: false,
+                    title: 'Pelajar',
+                    normal_price: '46.900',
+                    special_price: '23.450',
+                    users: '4.168',
                     features: [
-                        ['0.5X RESOURCES POWER'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
+                        ['1X RESOURCES POWER'],
+                        ['Unlimited', ' Disk Space'],
+                        ['Unlimited', ' Bandwidth'],
+                        ['Unlimited', ' POP3 Email'],
+                        ['Unlimited', ' Databases'],
+                        ['10', ' Addons Domains'],
+                        ['Instant', ' Backup'],
+                        ['Domain Gratis', ' Selamanya'],
+                        ['Unlimited SSL', ' Selamanya'],
                     ]
                 },
                 {   
                     best: true,
-                    title: 'Bayi',
-                    normal_price: '19.000',
-                    special_price: '14.900',
-                    users: '938',
+                    discount: false,
+                    title: 'Personal',
+                    normal_price: '58.900',
+                    special_price: '38.900',
+                    users: '10.017',
                     features: [
-                        ['0.5X RESOURCES POWER'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
+                        ['2X RESOURCES POWER'],
+                        ['Unlimited', ' Disk Space'],
+                        ['Unlimited', ' Bandwidth'],
+                        ['Unlimited', ' POP3 Email'],
+                        ['Unlimited', ' Databases'],
+                        ['Unlimited', ' Addons Domains'],
+                        ['Instant', ' Backup'],
+                        ['Domain Gratis', ' Selamanya'],
+                        ['Unlimited SSL', ' Selamanya'],
+                        ['Private', ' Name Server'],
+                        ['SpamAssasin', ' Mail Protection'],
                     ]
                 },
                 {   
                     best: false,
-                    title: 'Bayi',
-                    normal_price: '19.000',
-                    special_price: '14.900',
-                    users: '938',
+                    discount: true,
+                    title: 'Bisnis',
+                    normal_price: '109.900',
+                    special_price: '65.900',
+                    users: '3.552',
                     features: [
-                        ['0.5X RESOURCES POWER'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
-                        ['500 MB', ' ','DISK SPACE'],
+                        ['3X RESOURCES POWER'],
+                        ['Unlimited', ' Disk Space'],
+                        ['Unlimited', ' Bandwidth'],
+                        ['Unlimited', ' POP3 Email'],
+                        ['Unlimited', ' Databases'],
+                        ['Unlimited', ' Addons Domains'],
+                        ['Instant', ' Backup'],
+                        ['Domain Gratis', ' Selamanya'],
+                        ['Unlimited SSL', ' Selamanya'],
+                        ['Private', ' Name Server'],
+                        ['Prioritas', ' Layanan Support'],
+                        ['<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>'],
+                        ['SpamExpert', ' Pro Mail Protection'],
                     ]
                 },
             ]
@@ -127,6 +140,7 @@ export default {
     @extend .text-center;
 
     h2 {
+        @extend %montserrat;
         font-size: 36px;
         font-weight: bold;
         margin-bottom: 5px;
@@ -140,10 +154,6 @@ export default {
     &__list {
         margin-top: 75px;
         margin-bottom: 100px;
-
-        > div {
-            padding: 0;
-        }
 
         .list__item {
             border: solid 1px #f1f1f1;
@@ -205,39 +215,32 @@ export default {
                             font-weight: bold;
                         }
 
+                        i.fa-star {
+                            color: $blue;
+                        }
+
                     }
 
                     > a {
-                        @extend %main-btn;
-                        border-color: #4c4c4c;
-                        color: #4c4c4c;
-                        font-weight: bold;
-                        padding-bottom: 7px;
-
-                        &:hover {
-                            text-decoration: none;
-                            background-color: $blue;
-                            border-color: $blue;
-                            color: #fff;
-                        }
+                        @extend .main-btn;
                     }
                 }
             }
 
             &--best-seller {
                 @extend .list__item;
-                border-color: $blue;
+                border: solid 1px $blue;
 
                 h4 {
                     color: #fff;
                     background-color: $blue;
-                    border-color: $blue;
+                    border: $blue;
                 }
 
                 .item {
                     &__best {
-                        width: 120px;
-                        height: 120px;
+                        width: 110px;
+                        height: 110px;
                         top: -10px;
                         left: -10px;
                         overflow: hidden;
@@ -265,6 +268,8 @@ export default {
                         }
 
                         > span {
+                            @extend %montserrat;
+                            font-weight: bold;
                             position: absolute;
                             display: block;
                             width: 225px;
@@ -272,13 +277,13 @@ export default {
                             background-color: #00b359;
                             box-shadow: 0 5px 10px rgba(0,0,0,.1);
                             color: #fff;
-                            font-size: 16px;
+                            font-size: 13px;
                             text-shadow: 0 1px 1px rgba(0,0,0,.2);
                             text-transform: uppercase;
                             text-align: center;
                             right: -25px;
-                            top: 38px;
-                            transform: rotate(-45deg) translateX(19px);
+                            top: 43px;
+                            transform: rotate(-45deg) translateX(29px);
                         }
                     }
                     &__price {
@@ -287,14 +292,13 @@ export default {
                         border-color: $blue;
                     }
                     &__user {
+                        border-color: $d-blue;
                         background-color: $d-blue;
                         color: #fff;
                     }
                     &__content {
                         a {
-                            background-color: $blue;
-                            border-color: $blue;
-                            color: #fff;
+                            @extend .main-btn--blue;
                         }
                     }
 

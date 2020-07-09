@@ -3,7 +3,7 @@
         <div class="container">
             <div class="offset-md-1 col-md-10">
                 <div class="row">
-                    <div class="col-md-4 features__item" v-for="(feature, index) in features" :key="index">
+                    <div class="col-sm-4 features__item" v-for="(feature, index) in features" :key="index">
                         <img :src="`/assets/image/${feature.img}`" :alt="feature.name">
                         <h6>{{ feature.name }}</h6>
                     </div>
@@ -42,6 +42,10 @@ export default {
             height: 170px;
             margin-bottom: 15px;
             object-fit: contain;
+
+            @include media-breakpoint-down(md) {
+                margin-top: 15px;
+            }
         }
     }
 }
