@@ -1,0 +1,103 @@
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    color: #4c4c4c;
+    font-family: 'Roboto', sans-serif;
+}
+
+// font
+%roboto {
+    font-family: 'Roboto', sans-serif;
+}
+%montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+// end font
+
+// color
+$blue: #008fee;
+$d-blue: #007fde;
+// end color
+
+// btn
+.main-btn {
+    display: inline-block;
+    border-radius: 40px;
+    border: solid 2px #4c4c4c;
+    color: #4c4c4c;
+    padding: 10px 20px 12px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: .25s;
+    min-width: 170px;
+
+    &:hover {
+        text-decoration: none;
+        color: #fff;
+        border-color: $blue;
+        background-color: $blue;
+    }
+
+    &--blue {
+        @extend .main-btn;
+        border-color: $blue;
+        background-color: $blue;
+        color: #fff;
+
+        &:hover {
+            border-color: $d-blue;
+            background-color: $d-blue;
+        }
+    }
+
+    @include media-breakpoint-down(md) {
+        display: block;
+        width: max-content;
+        min-width: unset;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 16px;
+        padding: 5px 15px 7px;
+    }
+}
+// end btn
+
+// packages
+%main-separator {
+    border-top: solid 1px #f1f1f1;
+    border-bottom: solid 1px #f1f1f1;
+}
+
+%main-separator--bottom {
+    border-bottom: solid 1px #f1f1f1;
+}
+
+%border-bottom--light {
+    border-bottom: solid 1px #f1f1f1;
+}
+
+%packages-main-padding {
+    padding: 12px;
+}
+
+%packages-main-content-padding {
+    padding: 25px 12px 35px;
+}
+// end packages
+
+%small-divider {    
+    background: linear-gradient(#f1f1f1, #f1f1f1) bottom/ 100px 6px no-repeat;
+}
+
+// icon list
+.icon-list {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+        padding-left: 30px;
+        background: url('../assets/icon/check.png') left/20px no-repeat;
+        margin-bottom: 15px;
+    }
+}
+// end icon list
