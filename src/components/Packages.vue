@@ -186,6 +186,18 @@ export default {
                                 font-weight: bold;
                                 line-height: 1;
                             }
+
+                            > span:nth-child(3) {
+                                position: relative;
+                                padding-left: 5px;
+
+                                &::after {
+                                    content: '.';
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                }
+                            }
                         }
 
                     }
